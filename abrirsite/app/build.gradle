@@ -1,0 +1,31 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "25.0.0"
+    defaultConfig {
+        applicationId "com.example.n1e.abrirsite"
+        minSdkVersion 14
+        targetSdkVersion 14
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories {
+    maven {
+        url 'libs'
+    }
+}
+
+dependencies {
+    compile fileTree(include: '*.jar', dir: 'libs')
+    compile 'com.android.support:appcompat-v7:23.0.0'
+    compile 'org.xwalk:xwalk_core_library_beta:15.44.384.7'
+}
